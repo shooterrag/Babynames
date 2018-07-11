@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Baby Names
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  
+  <button ion-button block color="secondary" (click)="listData()">List Data</button>
+
+  <ion-list>
+
+    <ion-item *ngFor="let namestr of nameFilterlists">
+      <h3>{{ namestr.name }}</h3>
+      <p>{{ namestr.spell }}</p>
+      <button ion-button icon-only item-end (click)="playSound(namestr.spell)">
+        <ion-icon name="volume-up"></ion-icon>
+      </button>
+    </ion-item>
+    
+  </ion-list>
+  
+</ion-content>
