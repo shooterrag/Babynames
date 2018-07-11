@@ -14,7 +14,8 @@ export class DetailPage {
   dbtext: string;
   namelists = [];
   nameFilterlists = [];
-
+  isLoadingList: boolean;
+  
   constructor(public navCtrl: NavController, private dbService: DbServiceProvider, private tts: TextToSpeech) {
 
     console.log('Show detail page');
@@ -29,6 +30,7 @@ export class DetailPage {
   }
 
   listData() {
+    this.isLoadingList = true;
     this.dbService.listData().then(datas => {
       this.namelists = datas;
       this.initializeItems();
@@ -62,5 +64,9 @@ export class DetailPage {
         return (namestr.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+  }
+
+  ionViewDidEnter(){
+    this.isLoadingList = false;
   }
 }

@@ -9,6 +9,9 @@
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   
   <button ion-button block color="secondary" (click)="listData()">List Data</button>
+  
+  <ion-spinner name="bubbles" *ngIf="isLoadingList"></ion-spinner>
+
 
   <ion-list>
 

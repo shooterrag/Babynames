@@ -76,8 +76,8 @@ export class DbServiceProvider {
         console.log('### select baby_name success ### size = '+JSON.stringify(res));
         let datas = [];
         if (res.rows.length > 0) {
-          for (var i = 0; i < 30 ; i++) {
-          //for (var i = 0; i < res.rows.length; i++) {
+          //for (var i = 0; i < 30 ; i++) {
+          for (var i = 0; i < res.rows.length; i++) {
             datas.push({ id: res.rows.item(i).id, name: res.rows.item(i).name, spell: res.rows.item(i).spell, desc: res.rows.item(i).desc, day: res.rows.item(i).day, gender: res.rows.item(i).gender  });
           }
         }
