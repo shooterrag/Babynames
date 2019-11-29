@@ -41,12 +41,16 @@ $colors: (
   dark:       #222
 );
 
+$toolbar-background: color($colors, primary);
+//$background-color: #f7f7f7;
+//$text-color: #5d5d5d;
+//$text-input-highlight-color-valid: #5fcfdb;
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-
+$fab-size: 100px;
 
 
 // App Material Design Variables

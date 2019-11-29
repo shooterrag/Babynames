@@ -85,16 +85,18 @@ INSERT INTO `gender` (id,name) VALUES (1,'Boy'),
  (2,'Girl');
 CREATE TABLE IF NOT EXISTS `day_week` (
 	`id`	INTEGER NOT NULL,
+	`key`	TEXT,
 	`day`	TEXT,
 	PRIMARY KEY(`id`)
 );
-INSERT INTO `day_week` (id,day) VALUES (1,'จันทร์'),
- (2,'อังคาร'),
- (3,'พุธ'),
- (4,'พฤหัสบดี'),
- (5,'ศุกร์'),
- (6,'เสาร์'),
- (7,'อาทิตย์');
+INSERT INTO `day_week` (id,key,day) VALUES (1,'1','จันทร์'),
+ (2,'2','อังคาร'),
+ (3,'3d','พุธ กลางวัน'),
+ (4,'3n','พุธ กลางคืน'),
+ (5,'4','พฤหัสบดี'),
+ (6,'5','ศุกร์'),
+ (7,'6','เสาร์'),
+ (8,'7','อาทิตย์');
 CREATE TABLE IF NOT EXISTS `baby_name` (
 	`id`	INTEGER NOT NULL,
 	`name`	TEXT,

@@ -4,25 +4,31 @@
       Baby Names
     </ion-title>
   </ion-navbar>
+  <div>
+    <ion-searchbar [(ngModel)]="searchTerm" [formControl]="searchControl"></ion-searchbar>
+  </div>
 </ion-header>
+
 <ion-content padding>
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-  
-  <button ion-button block color="secondary" (click)="listData()">List Data</button>
-  
-  <ion-spinner name="bubbles" *ngIf="isLoadingList"></ion-spinner>
 
+  <div *ngIf="isLoadingList">
+    <ion-spinner name="bubbles"></ion-spinner>
+  </div>
 
-  <ion-list>
-
-    <ion-item *ngFor="let namestr of nameFilterlists">
-      <h3>{{ namestr.name }}</h3>
-      <p>{{ namestr.spell }}</p>
+  <ion-list [virtualScroll]="nameFilterlists" [approxItemHeight]="'132px'">
+    <ion-item *virtualItem="let namestr">
+      <h3>
+        <strong>{{ namestr.name }}</strong>
+      </h3>
+      <h3>อ่านว่า : ({{ namestr.spell }})</h3>
+      <p text-wrap>ความหมาย : {{ namestr.desc }}</p>
+      <button ion-button icon-only item-end (click)="playSound(namestr.name)">
+        <ion-icon name="volume-up"></ion-icon>
+      </button>
       <button ion-button icon-only item-end (click)="playSound(namestr.spell)">
         <ion-icon name="volume-up"></ion-icon>
       </button>
     </ion-item>
-    
   </ion-list>
-  
+
 </ion-content>

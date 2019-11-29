@@ -6,10 +6,116 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-
+  <!-- 
   <button ion-button block (click)="openNavDetailsPage('detail-page')">Go to detail page</button>
 
-  <button ion-button block (click)="openNavDetailsPage('sound-page')">Go to sound page</button>
+  <button ion-button block (click)="openNavDetailsPage('sound-page')">Go to sound page</button> -->
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-fab center>
+          <img ion-fab color="danger" src="assets/imgs/male.png" />
+          <ion-fab-list side="right">
+            <label>ผู้ชาย</label>
+          </ion-fab-list>
+        </ion-fab>
+      </ion-col>
+      <ion-col>
+        <ion-fab center>
+          <img ion-fab src="assets/imgs/female.png" />
+          <ion-fab-list side="left">
+            <label>ผู้หญิง</label>
+          </ion-fab-list>
+        </ion-fab>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-spinner name="bubbles" *ngIf="isLoadingList"></ion-spinner>
+
+        <ion-list>
+
+          <!-- <ion-item *ngFor="let item of daylists">
+      <h3>{{ item.day }}</h3>
+      <button ion-button clear item-right (click)="openNavDetailsPage('detail-page', item.key)">View</button>
+    </ion-item> -->
+
+          <ion-item>
+            <h3>จันทร์</h3>
+            <button ion-button clear item-right (click)="openNavDetailsPage('detail-page', '1')">View</button>
+          </ion-item>
+          <ion-item>
+            <h3>อังคาร</h3>
+            <button ion-button clear item-right (click)="openNavDetailsPage('detail-page', '2')">View</button>
+          </ion-item>
+          <ion-item>
+            <h3>พุธ กลางวัน</h3>
+            <button ion-button clear item-right (click)="openNavDetailsPage('detail-page', '3d')">View</button>
+          </ion-item>
+          <ion-item>
+            <h3>พุธ กลางคืน</h3>
+            <button ion-button clear item-right (click)="openNavDetailsPage('detail-page', '3n')">View</button>
+          </ion-item>
+          <ion-item>
+            <h3>พฤหัส</h3>
+            <button ion-button clear item-right (click)="openNavDetailsPage('detail-page', '4')">View</button>
+          </ion-item>
+          <ion-item>
+            <h3>ศุกร์</h3>
+            <button ion-button clear item-right (click)="openNavDetailsPage('detail-page', '5')">View</button>
+          </ion-item>
+          <ion-item>
+            <h3>เสาร์</h3>
+            <button ion-button clear item-right (click)="openNavDetailsPage('detail-page', '6')">View</button>
+          </ion-item>
+          <ion-item>
+            <h3>อาทิตย์</h3>
+            <button ion-button clear item-right (click)="openNavDetailsPage('detail-page', '7')">View</button>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <inote-ads></inote-ads>
 </ion-content>
